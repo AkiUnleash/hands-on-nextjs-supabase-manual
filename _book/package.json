@@ -1,9 +1,0 @@
-{
-  "name": "handson-manual",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "honkit": "^3.6.23"
-  }
-}
