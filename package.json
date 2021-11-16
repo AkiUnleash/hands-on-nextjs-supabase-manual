@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "serve": "honkit serve",
+    "deploy": "gh-pages -d _book"
+  },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "honkit": "^3.6.23"
   }
 }
