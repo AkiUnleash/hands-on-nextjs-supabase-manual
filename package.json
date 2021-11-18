@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "honkit serve",
+    "build": "honkit build",
     "deploy": "gh-pages -d _book"
   },
   "devDependencies": {
