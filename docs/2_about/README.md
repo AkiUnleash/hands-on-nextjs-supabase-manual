@@ -7,7 +7,7 @@ Supabase とは、認証やデータベース、ストレージ等を提供す�
 
 ![gras](010_supabase-top.png)
 
-# Supabase vs Firebase
+# 🤔 Supabase vs Firebase
 
 ## 機能比較一覧表
 
