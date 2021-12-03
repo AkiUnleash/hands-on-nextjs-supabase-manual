@@ -11,5 +11,12 @@
   "devDependencies": {
     "gh-pages": "^3.2.3",
     "honkit": "^3.6.23"
+  },
+  "dependencies": {
+    "gitbook-plugin-bottom-navigation": "^0.2.1",
+    "gitbook-plugin-copy-code-button": "^0.0.2",
+    "gitbook-plugin-hints": "^1.0.2",
+    "gitbook-plugin-intopic-toc": "^1.1.1",
+    "gitbook-plugin-page-footer-ex": "^0.1.2"
   }
 }
