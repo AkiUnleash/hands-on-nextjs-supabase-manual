@@ -251,6 +251,50 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="６．プロフィール登録">６．プロフィール登録</h1>
+<p>プロフィールを登録するためのテーブルを作成後、実際に登録作業をしていきます。</p>
+<h2 id="✅-supabase-に、プロフィールのテーブルを作成">✅ Supabase に、プロフィールのテーブルを作成</h2>
+<h3 id="①-sql-を実行して、テーブルを作成">① SQL を実行して、テーブルを作成</h3>
+<ol>
+<li>左の SQL をクリック</li>
+<li>New query をクリック</li>
+<li>右に表示されたエディタに、以下の SQL を貼り付け</li>
+<li>RUN をクリック</li>
+<li>Success. No rows returned と表示されていれば成功！</li>
+</ol>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> profile (
+  id uuid <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span>,
+  name text <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span>,
+  created_at <span class="hljs-type">timestamp</span> <span class="hljs-keyword">with</span> <span class="hljs-type">time</span> zone <span class="hljs-keyword">DEFAULT</span> timezone(<span class="hljs-string">&apos;utc&apos;</span>::text, now()) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+  <span class="hljs-keyword">PRIMARY</span> KEY (id)
+);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> profile <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">constraint</span> unique_name <span class="hljs-keyword">unique</span> (name);
+</code></pre>
+<p><img src="010-supabase.png" alt="gras"></p>
+<h3 id="②-テーブルが作成されてるか確認">② テーブルが作成されてるか確認</h3>
+<ol>
+<li>左の Table をクリック</li>
+<li>Profile テーブルができていれば成功！</li>
+</ol>
+<p><img src="020-supabase.png" alt="gras"></p>
+<h2 id="✅-フロントnextjsから、プロフィールを登録する">✅ フロント(Next.js)から、プロフィールを登録する</h2>
+<h3 id="①-src-→-pages-→-profiletsx-を開いてください。">① src → pages → profile.tsx を開いてください。</h3>
+<p><img src="030-gitpod.png" alt="gras"></p>
+<h3 id="②-56-行目にある、以下のコードのコメントを解除してください。">② 56 行目にある、以下のコードのコメントを解除してください。</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { error } = <span class="hljs-keyword">await</span> supabase.from(<span class="hljs-string">&quot;profile&quot;</span>).upsert([
+  {
+    <span class="hljs-attr">id</span>: loginUser.id,
+    <span class="hljs-attr">name</span>: name,
+  },
+]);
+
+error &amp;&amp; <span class="hljs-built_in">console</span>.error(error);
+router.push(<span class="hljs-string">&quot;/home&quot;</span>);
+</code></pre>
+<h3 id="③-yarn-build-→-yarn-start-をしてください。">③ yarn build → yarn start をしてください。</h3>
+<h3 id="④-プロフィール登録画面で、ニックネーム入力後、登録するをクリック">④ プロフィール登録画面で、ニックネーム入力後、登録するをクリック</h3>
+<p><img src="040-gitpod.png" alt="gras"></p>
+<h3 id="⑤-supabase-のテーブルにデータが登録されていれば成功！">⑤ Supabase のテーブルにデータが登録されていれば成功！</h3>
+<p><img src="050-supabase.png" alt="gras"></p>
 
                                 
                                 </section>
@@ -294,7 +338,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"６．プロフィール登録","level":"1.7","depth":1,"next":{"title":"７．投稿ページ","level":"1.8","depth":1,"path":"7_add_diary/README.md","ref":"7_add_diary/README.md","articles":[]},"previous":{"title":"５．Github ログインの作成","level":"1.6","depth":1,"path":"5_github/README.md","ref":"5_github/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"6_add_profile/README.md","mtime":"2021-11-16T05:17:06.601Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2021-12-02T08:41:44.132Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"６．プロフィール登録","level":"1.7","depth":1,"next":{"title":"７．投稿ページ","level":"1.8","depth":1,"path":"7_add_diary/README.md","ref":"7_add_diary/README.md","articles":[]},"previous":{"title":"５．Github ログインの作成","level":"1.6","depth":1,"path":"5_github/README.md","ref":"5_github/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"6_add_profile/README.md","mtime":"2021-12-03T02:46:56.791Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2021-12-03T02:56:25.937Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
