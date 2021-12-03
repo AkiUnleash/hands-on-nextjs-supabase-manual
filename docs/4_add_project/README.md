@@ -20,9 +20,14 @@
 | Database Password | PostgreSQL の DB パスワード |       任意の値        |
 | Region            |  リージョン(サーバの場所)   | Northeast Asia(Tokyo) |
 
-> ☝ Database Password は、今回のハンズオンでは使用しませんが、忘れないほうが良いかも。
+{% hint style='info' %}
 
-> ☝ Region は、一番距離が近い東京を選択することをオススメします。
+☝ Database Password は、今回のハンズオンでは使用しませんが、忘れないほうが良いかも。
+
+{% endhint %}
+{% hint style='info' %}
+☝ Region は、一番距離が近い東京を選択することをオススメします。
+{% endhint %}
 
 ![gras](030-supabase.png)
 
