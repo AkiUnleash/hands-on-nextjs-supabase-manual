@@ -267,9 +267,79 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="７．投稿ページ">７．投稿ページ</h1>
+<p>プロフィールを登録するためのテーブルを作成後、実際に登録作業をしていきます。</p>
+<h2 id="✅-supabase-に、投稿用のテーブルを作成">✅ Supabase に、投稿用のテーブルを作成</h2>
+<h3 id="①-sql-を実行して、テーブルを作成">① SQL を実行して、テーブルを作成</h3>
+<ol>
+<li>左の SQL をクリック</li>
+<li>New query をクリック</li>
+<li>右に表示されたエディタに、以下の SQL を貼り付け</li>
+<li>RUN をクリック</li>
+<li>Success. No rows returned と表示されていれば成功！</li>
+</ol>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> diary (
+  id uuid <span class="hljs-keyword">default</span> uuid_generate_v4 (),
+  profile_id uuid,
+  sentence text ,
+  created_at <span class="hljs-type">timestamp</span> <span class="hljs-keyword">with</span> <span class="hljs-type">time</span> zone <span class="hljs-keyword">DEFAULT</span> timezone(<span class="hljs-string">&apos;utc&apos;</span>::text, now()) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+  <span class="hljs-keyword">PRIMARY</span> KEY (id),
+  <span class="hljs-keyword">foreign</span> key (profile_id) <span class="hljs-keyword">references</span> profile(id)
+);
+</code></pre>
+<p><img src="010-supabase.png" alt="gras"></p>
+<h3 id="②-テーブルが作成されてるか確認">② テーブルが作成されてるか確認</h3>
+<ol>
+<li>左の Table をクリック</li>
+<li>diary テーブルができていれば成功！</li>
+</ol>
+<p><img src="020-supabase.png" alt="gras"></p>
+<h2 id="✅-フロントnextjsから、投稿する。">✅ フロント(Next.js)から、投稿する。</h2>
+<h3 id="①-src-→-pages-→-hometsx-を開いてください。">① src → pages → home.tsx を開いてください。</h3>
+<p><img src="030-gitpod.png" alt="gras"></p>
+<h3 id="②-56-行目にある、以下のコードのコメントを解除してください。">② 56 行目にある、以下のコードのコメントを解除してください。</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { error } = <span class="hljs-keyword">await</span> supabase.from(<span class="hljs-string">&quot;diary&quot;</span>).insert([
+  {
+    <span class="hljs-attr">profile_id</span>: loginUser.id,
+    <span class="hljs-attr">sentence</span>: sentence,
+  },
+]);
+error &amp;&amp; <span class="hljs-built_in">console</span>.error(error);
+</code></pre>
+<h3 id="③-yarn-build-→-yarn-start-をしてください。">③ yarn build → yarn start をしてください。</h3>
+<h3 id="④-ホーム画面で、適当に文字を入力後、登録するをクリック">④ ホーム画面で、適当に文字を入力後、登録するをクリック</h3>
+<p><img src="040-gitpod.png" alt="gras"></p>
+<h3 id="⑤-supabase-の-diary-テーブルにデータが登録されていれば成功！">⑤ Supabase の diary テーブルにデータが登録されていれば成功！</h3>
+<p><img src="050-supabase.png" alt="gras"></p>
+<h2 id="✅-投稿の内容を表示する。">✅ 投稿の内容を表示する。</h2>
+<h3 id="①-xx-行目にある、以下のコードのコメントを解除してください。">① xx 行目にある、以下のコードのコメントを解除してください。</h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { data } = <span class="hljs-keyword">await</span> supabase
+  .from(<span class="hljs-string">&quot;diary&quot;</span>)
+  .select(
+    <span class="hljs-string">`sentence,
+      created_at,
+      profile (
+        name
+      )`</span>
+  )
+  .order(<span class="hljs-string">&quot;created_at&quot;</span>, { <span class="hljs-attr">ascending</span>: <span class="hljs-literal">false</span> });
+
+setTimeline(data);
+</code></pre>
+<h3 id="②-yarn-build-→-yarn-start-をしてください。">② yarn build → yarn start をしてください。</h3>
+<h3 id="③-ホーム画面先程投稿した値が表示されます。">③ ホーム画面先程投稿した値が表示されます。</h3>
+<p><img src="060-gitpod.png" alt="gras"></p>
+<h2 id="🤔-rdbリレーショナルデータベースの強み">🤔 RDB(リレーショナルデータベース)の強み</h2>
+<p>profile と diary テーブルを合わせて、ニックネームと文章を表示させています。</p>
+<p><img src="070-explanation.png" alt="gras"></p>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>メリット</p>
+<ul>
+<li>もしニックネームを変更した場合でも、過去の投稿に表示されるニックネームも一緒に更新されます。</li>
+<li>項目を追加も簡潔にでき、必要な項目が把握しやすい。</li>
+</ul>
+</div></div></p>
 <div class="navPagesContainer"> <div class="navPagesLinks"> <a class="card cardPrevious"> <div class="cardIcon"> <i class="fa fa-angle-left"></i> </div> <div class="cardPreviousBody"> <div class="cardHint"> <span>Previous</span> </div> <div class="cardTitle"> <span>６．プロフィール登録</span> </div> </div> </a> <a class="card cardNext"> <div class="cardNextBody"> <div class="cardHint"> <span>Next</span> </div> <div class="cardTitle"> <span>おわりに</span> </div> </div> <div class="cardIcon"> <i class="fa fa-angle-right"></i> </div> </a> </div> </div>
 
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> © All Rights Reserved </span>            <span class="page-footer-ex-footer-update"> updated 2021-12-03 05:18:27 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> © All Rights Reserved </span>            <span class="page-footer-ex-footer-update"> updated 2021-12-04 02:35:16 </span> </footer>
                                 
                                 </section>
                             
@@ -312,7 +382,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"７．投稿ページ","level":"1.8","depth":1,"next":{"title":"おわりに","level":"1.9","depth":1,"path":"8_fin/README.md","ref":"8_fin/README.md","articles":[]},"previous":{"title":"６．プロフィール登録","level":"1.7","depth":1,"path":"6_add_profile/README.md","ref":"6_add_profile/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["copy-code-button","intopic-toc","bottom-navigation","page-footer-ex","hints"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":1,"isCollapsed":false,"isScrollspyActive":true,"visible":true,"label":"目次"},"page-footer-ex":{"copyright":"© All Rights Reserved","markdown":false,"update_label":"updated","update_format":"YYYY-MM-DD HH:mm:ss"},"search":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"bottom-navigation":{"navPrevSelector":null,"navNextSelector":null,"iconColor":null,"titleColor":null,"borderColor":"#873077","pageInnerWidth":null},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"7_add_diary/README.md","mtime":"2021-12-03T05:18:27.068Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2021-12-03T05:18:36.120Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"７．投稿ページ","level":"1.8","depth":1,"next":{"title":"おわりに","level":"1.9","depth":1,"path":"8_fin/README.md","ref":"8_fin/README.md","articles":[]},"previous":{"title":"６．プロフィール登録","level":"1.7","depth":1,"path":"6_add_profile/README.md","ref":"6_add_profile/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["copy-code-button","intopic-toc","bottom-navigation","page-footer-ex","hints"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":1,"isCollapsed":false,"isScrollspyActive":true,"visible":true,"label":"目次"},"page-footer-ex":{"copyright":"© All Rights Reserved","markdown":false,"update_label":"updated","update_format":"YYYY-MM-DD HH:mm:ss"},"search":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"bottom-navigation":{"navPrevSelector":null,"navNextSelector":null,"iconColor":null,"titleColor":null,"borderColor":"#873077","pageInnerWidth":null},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"7_add_diary/README.md","mtime":"2021-12-04T02:35:16.904Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2021-12-04T02:35:25.699Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
