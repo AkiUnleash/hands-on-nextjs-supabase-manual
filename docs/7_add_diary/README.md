@@ -52,6 +52,15 @@ error && console.error(error);
 
 ### ③ yarn build → yarn start をしてください。
 
+ターミナルにて、一度 Ctrl + C を押して、サーバーを解除します。  
+その後、yarn build と入力して、エンターを押してください。
+
+![gras](035-gitpod.png)
+
+Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
+表示された http://localhost:3000 にブラウザでアクセスしてください。
+![gras](036-gitpod.png)
+
 ### ④ ホーム画面で、適当に文字を入力後、登録するをクリック
 
 ![gras](040-gitpod.png)
@@ -80,6 +89,15 @@ setTimeline(data);
 ```
 
 ### ② yarn build → yarn start をしてください。
+
+ターミナルにて、一度 Ctrl + C を押して、サーバーを解除します。  
+その後、yarn build と入力して、エンターを押してください。
+
+![gras](035-gitpod.png)
+
+Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
+表示された http://localhost:3000 にブラウザでアクセスしてください。
+![gras](036-gitpod.png)
 
 ### ③ ホーム画面先程投稿した値が表示されます。
 

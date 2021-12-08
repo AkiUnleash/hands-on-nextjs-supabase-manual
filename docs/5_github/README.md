@@ -54,6 +54,13 @@ const handleClick = async () => {
 
 ### ③ yarn build → yarn start をしてください。
 
+ターミナルに、yarn build と入力して、エンターを押します。
+![gras](055-gitpod.png)
+
+Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
+表示された http://localhost:3000 にブラウザでアクセスしてください。
+![gras](056-gitpod.png)
+
 ### ④ 保存をして、Sign in with Github をクリック
 
 ![gras](060-gitpod.png)
