@@ -9,3 +9,4 @@
 - [６．プロフィール登録](6_add_profile/README.md)
 - [７．投稿ページ](7_add_diary/README.md)
 - [おわりに](8_fin/README.md)
+- [トラブルシューティング](9_trouble-shooting/README.md)
