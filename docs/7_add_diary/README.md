@@ -38,9 +38,10 @@ create table diary (
 
 ![gras](030-gitpod.png)
 
-### ② 56 行目にある、以下のコードのコメントを解除してください。
+### ② 25〜31 行目にある、以下のコードのコメントを解除してください。
 
 ```javascript
+// ７.投稿ページ - 投稿の登録処理
 const { error } = await supabase.from("diary").insert([
   {
     profile_id: loginUser.id,
@@ -71,17 +72,19 @@ Done という文字が確認できたら、 yarn start と入力してエンタ
 
 ## ✅ 投稿の内容を表示する。
 
-### ① xx 行目にある、以下のコードのコメントを解除してください。
+### ① 38〜50 行目にある、以下のコードのコメントを解除してください。
 
 ```javascript
+// ７.投稿ページ - 投稿の表示
 const { data } = await supabase
   .from("diary")
   .select(
     `sentence,
-      created_at,
-      profile (
-        name
-      )`
+        created_at,
+        profile (
+          name
+        )
+        `
   )
   .order("created_at", { ascending: false });
 

@@ -37,16 +37,16 @@ ALTER TABLE profile ADD constraint unique_name unique (name);
 
 ![gras](030-gitpod.png)
 
-### ② 56 行目にある、以下のコードのコメントを解除してください。
+### ② 33〜40 行目にある、以下のコードのコメントを解除してください。
 
 ```javascript
+// ６．プロフィール登録 - プロフィール登録処理
 const { error } = await supabase.from("profile").upsert([
   {
     id: loginUser.id,
     name: name,
   },
 ]);
-
 error && console.error(error);
 router.push("/home");
 ```
