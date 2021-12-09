@@ -43,11 +43,11 @@ Gitpod を開き、作業をしていきましょう。
 
 ![gras](050-gitpod.png)
 
-### ② 37 行目にある、以下のコードのコメントを解除してください。
+### ② 21 行目にある、以下のコードのコメントを解除してください。
 
 ```javascript
-// Githubログインボタンのクリック時
 const handleClick = async () => {
+  // ５．Github ログインの作成 - Github ログイン処理
   await supabase.auth.signIn({ provider: "github" });
 };
 ```

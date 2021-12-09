@@ -26,7 +26,7 @@ Github アカウントを使って、Supabase にログインしましょう。
 
 開発環境の構築をしましょう。
 
-### ① [ここをクリックして Gitpod を起動](https://gitpod.io/#https://github.com/AkiUnleash/hands-on-nextjs-supabase/tree/main)
+### ① [ここをクリックして Gitpod を起動](https://gitpod.io/#https://github.com/AkiUnleash/hands-on-nextjs-supabase/tree/hands-on)
 
 ### ② 以下のような画面が表示されれば成功です。
 
