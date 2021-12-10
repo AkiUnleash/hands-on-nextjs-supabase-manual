@@ -53,3 +53,16 @@ NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxx.supabase.co
 ```
 
 > ☝ この API と URL を頼りに、Next.js から Supabase へアクセスします。
+
+### ③ yarn build → yarn start をして起動してみましょう。
+
+ターミナルに、yarn build と入力して、エンターを押します。
+![gras](070-gitpod.png)
+
+Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
+表示された http://localhost:3000 にブラウザでアクセスしてください。
+![gras](080-gitpod.png)
+
+### ④ 以下のようなトップ画面が表示されれば成功です！
+
+![gras](090-gitpod.png)

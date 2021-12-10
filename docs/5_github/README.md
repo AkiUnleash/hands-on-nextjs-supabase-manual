@@ -35,6 +35,12 @@
 
 ![gras](040-supabase.png)
 
+### ⑤ 起動したサイトの URL を、Supabase の上部にある Site URL に貼り付けてください。
+
+☝ 入力後は、Save ボタンを忘れずに！
+
+![gras](045-supabase.png)
+
 ## ✅ フロント(Next.js)の設定
 
 Gitpod を開き、作業をしていきましょう。
@@ -54,14 +60,15 @@ const handleClick = async () => {
 
 ### ③ yarn build → yarn start をしてください。
 
-ターミナルに、yarn build と入力して、エンターを押します。
+ターミナルにて、一度 Ctrl + C を押して、サーバーを解除します。  
+その後、yarn build と入力して、エンターを押してください。
 ![gras](055-gitpod.png)
 
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
 表示された http://localhost:3000 にブラウザでアクセスしてください。
 ![gras](056-gitpod.png)
 
-### ④ 保存をして、Sign in with Github をクリック
+### ④ ページ更新をして、Sign in with Github をクリック
 
 ![gras](060-gitpod.png)
 
