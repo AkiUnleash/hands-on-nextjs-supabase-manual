@@ -54,7 +54,8 @@ const handleClick = async () => {
 
 ### ③ yarn build → yarn start をしてください。
 
-ターミナルに、yarn build と入力して、エンターを押します。
+ターミナルにて、一度 Ctrl + C を押して、サーバーを解除します。  
+その後、yarn build と入力して、エンターを押してください。
 ![gras](055-gitpod.png)
 
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
