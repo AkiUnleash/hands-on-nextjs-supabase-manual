@@ -19,6 +19,7 @@
 | name              |     プロジェクトの名前      |  supabase-app-server  |
 | Database Password | PostgreSQL の DB パスワード |       任意の値        |
 | Region            |  リージョン(サーバの場所)   | Northeast Asia(Tokyo) |
+| Pricing Plan      |        プランの選択         |       Free tier       |
 
 {% hint style='info' %}
 
@@ -60,7 +61,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxxxx.supabase.co
 ![gras](070-gitpod.png)
 
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
-表示された http://localhost:3000 にブラウザでアクセスしてください。
+表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](080-gitpod.png)
 
 ### ④ 以下のようなトップ画面が表示されれば成功です！
