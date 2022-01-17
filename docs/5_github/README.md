@@ -65,7 +65,7 @@ const handleClick = async () => {
 ![gras](055-gitpod.png)
 
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
-表示された http://localhost:3000 にブラウザでアクセスしてください。
+表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](056-gitpod.png)
 
 ### ④ ページ更新をして、Sign in with Github をクリック

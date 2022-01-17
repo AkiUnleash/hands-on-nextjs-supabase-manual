@@ -59,7 +59,7 @@ error && console.error(error);
 ![gras](035-gitpod.png)
 
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
-表示された http://localhost:3000 にブラウザでアクセスしてください。
+表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](036-gitpod.png)
 
 ### ④ ホーム画面で、適当に文字を入力後、登録するをクリック
@@ -99,7 +99,7 @@ setTimeline(data);
 ![gras](035-gitpod.png)
 
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
-表示された http://localhost:3000 にブラウザでアクセスしてください。
+表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](036-gitpod.png)
 
 ### ③ ホーム画面先程投稿した値が表示されます。
