@@ -278,6 +278,33 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="トラブルシューティング">トラブルシューティング</h1>
+<h2 id="４．プロジェクトの作成">４．プロジェクトの作成</h2>
+<h3 id="yarn-build-時にエラーが発生する。">yarn build 時にエラーが発生する。</h3>
+<p>以下のようなエラーコードが出力されてビルドできない。</p>
+<pre><code>Error: Missing env.NEXT_PUBLIC_SUPABASE_URL
+    at Object.8786 (/workspace/hands-on-nextjs-supabase/.next/server/chunks/610.js:80:9)
+    at __webpack_require__ (/workspace/hands-on-nextjs-supabase/.next/server/webpack-runtime.js:25:42)
+    at Object.7448 (/workspace/hands-on-nextjs-supabase/.next/server/pages/_app.js:35:19)
+    at __webpack_require__ (/workspace/hands-on-nextjs-supabase/.next/server/webpack-runtime.js:25:42)
+    at __webpack_exec__ (/workspace/hands-on-nextjs-supabase/.next/server/pages/_app.js:235:39)
+    at /workspace/hands-on-nextjs-supabase/.next/server/pages/_app.js:236:66
+    at Function.__webpack_require__.X (/workspace/hands-on-nextjs-supabase/.next/server/webpack-runtime.js:108:21)
+    at /workspace/hands-on-nextjs-supabase/.next/server/pages/_app.js:236:47
+    at Object.&lt;anonymous&gt; (/workspace/hands-on-nextjs-supabase/.next/server/pages/_app.js:239:3)
+    at Module._compile (node:internal/modules/cjs/loader:1101:14) {
+  type: &apos;Error&apos;
+}
+error Command failed with exit code 1.
+</code></pre><h4 id="原因と対策">原因と対策</h4>
+<p>.env.local に API キーが保存されていない可能性があります。
+「✅ API キーを保存」を参照しながら、.env.local に API キーを保存してみてください。</p>
+<h2 id="github-ログインの構築">Github ログインの構築</h2>
+<h3 id="設定して試したけど、ログインができない。">設定して試したけど、ログインができない。</h3>
+<h4 id="考えられる原因">考えられる原因</h4>
+<ul>
+<li>『② 必要な３つの情報を入力 → Register application をクリック。』の”Authorization callback URL”の設定値、Supabase の URL と”/auth/v1/callback”が入力されているか確認してください。</li>
+<li>Supabase に値を設定した後に、必ず Save が必要です。上部に Save ボタンがあるので、押下したあとに再度ログインをためしてみてください。</li>
+</ul>
 <div class="navPagesContainer"> <div class="navPagesLink"> <a class="card cardPrevious"> <div class="cardIcon"> <i class="fa fa-angle-left"></i> </div> <div class="cardPreviousBody"> <div class="cardHint"> <span>Previous</span> </div> <div class="cardTitle"> <span>おわりに</span> </div> </div> </a> </div> </div>
 
 <footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> © All Rights Reserved </span>            <span class="page-footer-ex-footer-update"> updated 2021-12-08 11:36:44 </span> </footer>
@@ -319,7 +346,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"トラブルシューティング","level":"1.10","depth":1,"previous":{"title":"おわりに","level":"1.9","depth":1,"path":"8_fin/README.md","ref":"8_fin/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["copy-code-button","intopic-toc","bottom-navigation","page-footer-ex","hints","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":1,"isCollapsed":false,"isScrollspyActive":true,"visible":true,"label":"目次"},"livereload":{},"page-footer-ex":{"copyright":"© All Rights Reserved","markdown":false,"update_label":"updated","update_format":"YYYY-MM-DD HH:mm:ss"},"search":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"bottom-navigation":{"navPrevSelector":null,"navNextSelector":null,"iconColor":null,"titleColor":null,"borderColor":"#873077","pageInnerWidth":null},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"9_trouble-shooting/README.md","mtime":"2021-12-08T02:36:44.986Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2022-01-17T08:21:05.544Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"トラブルシューティング","level":"1.10","depth":1,"previous":{"title":"おわりに","level":"1.9","depth":1,"path":"8_fin/README.md","ref":"8_fin/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["copy-code-button","intopic-toc","bottom-navigation","page-footer-ex","hints","livereload"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":1,"isCollapsed":false,"isScrollspyActive":true,"visible":true,"label":"目次"},"livereload":{},"page-footer-ex":{"copyright":"© All Rights Reserved","markdown":false,"update_label":"updated","update_format":"YYYY-MM-DD HH:mm:ss"},"search":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"bottom-navigation":{"navPrevSelector":null,"navNextSelector":null,"iconColor":null,"titleColor":null,"borderColor":"#873077","pageInnerWidth":null},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"9_trouble-shooting/README.md","mtime":"2021-12-08T02:36:44.986Z","type":"markdown"},"gitbook":{"version":"3.6.23","time":"2022-01-18T04:50:53.547Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
