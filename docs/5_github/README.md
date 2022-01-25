@@ -16,7 +16,7 @@
 | No  | 項目                       | 解説                                                                                       |
 | :-: | :------------------------- | :----------------------------------------------------------------------------------------- |
 |  1  | Application name           | 任意                                                                                       |
-|  2  | Homepage URL               | yarn dev で開いたページの URL をペースト。                                                 |
+|  2  | Homepage URL               | yarn start で開いたページの URL をペースト。                                               |
 |  3  | Authorization callback URL | .env.local の NEXT_PUBLIC_SUPABASE_URL に記載した URL に、/auth/v1/callback を付けて入力。 |
 
 ☝ すべて入力できたら、Register Application をクリック。
