@@ -68,6 +68,15 @@ Done という文字が確認できたら、 yarn start と入力してエンタ
 表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](056-gitpod.png)
 
+#### 補足：ポップアップをクリックでも可能です。
+
+{% hint style='info' %}
+
+右下に表示される "A service is available on port 3000"の "Open Browser" をクリックでもブラウザ表示できます。
+
+{% endhint %}
+![gras](057-gitpod.png)
+
 ### ④ ページ更新をして、Sign in with Github をクリック
 
 ![gras](060-gitpod.png)

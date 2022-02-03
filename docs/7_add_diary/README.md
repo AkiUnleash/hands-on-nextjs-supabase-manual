@@ -27,7 +27,7 @@ create table diary (
 
 ### ② テーブルが作成されてるか確認
 
-1. 左の Table をクリック
+1. 左の Table Editor をクリック
 2. diary テーブルができていれば成功！
 
 ![gras](020-supabase.png)
@@ -61,6 +61,16 @@ error && console.error(error);
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
 表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](036-gitpod.png)
+
+#### 補足：ポップアップをクリックでも可能です。
+
+{% hint style='info' %}
+
+右下に表示される "A service is available on port 3000"の "Open Browser" をクリックでもブラウザ表示できます。
+
+{% endhint %}
+
+![gras](037-gitpod.png)
 
 ### ④ ホーム画面で、適当に文字を入力後、登録するをクリック
 
@@ -101,6 +111,16 @@ setTimeline(data);
 Done という文字が確認できたら、 yarn start と入力してエンターを押します。  
 表示された http://localhost:3000 に、カーソルを合わせて「Ctrl+左クリック」を行い、ブラウザにアクセスしてください。
 ![gras](036-gitpod.png)
+
+#### 補足：ポップアップをクリックでも可能です。
+
+{% hint style='info' %}
+
+右下に表示される "A service is available on port 3000"の "Open Browser" をクリックでもブラウザ表示できます。
+
+{% endhint %}
+
+![gras](037-gitpod.png)
 
 ### ③ ホーム画面先程投稿した値が表示されます。
 
