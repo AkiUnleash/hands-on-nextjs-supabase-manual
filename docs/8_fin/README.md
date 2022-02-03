@@ -40,6 +40,8 @@ https://errorshare.dev/
 
 ### ♿ UnleashMeet
 
+<a href="https://unleash-meet.connpass.com/event/237356/">![](unleashmeet.png)</a>
+
 [【オンライン】UnleashMeet ~ 障害者の ICT 業界への就職情報共有 - connpass](https://unleash-meet.connpass.com/event/237356/)
 
 {% hint style='tip' %}
