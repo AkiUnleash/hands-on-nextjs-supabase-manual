@@ -14,7 +14,11 @@ Firebase だけではない選択肢があるということを知っていた�
 
 ### 😄 フリーランスエンジニアしています！
 
-https://www.unleash.site/
+[Unleash - アンリッシュ -](https://www.unleash.site/)
+
+[Akio Yano - Twitter](https://twitter.com/AkiUnleash)
+
+※ 大変有り難いことに、現在は案件受け付けておりません。
 
 {% hint style='tip' %}
 
@@ -53,3 +57,8 @@ https://errorshare.dev/
 ## この度はご受講いただき有難うございました。
 
 受講者の皆様、この度はお時間をいただき有難うございました。
+
+MarkingCloud のスタッフの皆様、資料作成方法等も含めてたくさんのアドバイスを惜しみなくいただきました。
+この場を借りて、お礼を申し上げます。
+
+有難うございました！
